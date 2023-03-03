@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>danh sach giang vien</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>danh sach giang vien</h1>
+    <a href="/form-add"><button>themdanhsach</button></a> <br>
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <th>name</th>
+        <th>diachi</th>
+        <th>sdt</th>
+        <th>MaGV</th>
+        <th>ACTION</th>
+      </tr>
+      <% giangviens.forEach(item => { %>
+        <tr>
+          <td><%= item._id %></td>
+          <td><%= item.Hoten %></td>
+          <td><%= item.DiaChi %></td>
+          <td><%= item.sdt %></td>
+          <td><%= item.MaGV %></td>
+          <td><a href="/form-update/<%= item._id %>">Update</a>|| <a href="/form-delete/<%= item._id %>">delete</a></td>
+        </tr>
+        <%  }) %>
+
+      
+    </table>
+   
+  </body>
+</html>
